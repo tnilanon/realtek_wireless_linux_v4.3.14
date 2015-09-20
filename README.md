@@ -1,4 +1,5 @@
 # Realtek Wireless Driver for Linux
+v4.3.14_13455.20150212_BTCOEX20150128-51
 
 ## Supported chipsets
 * RTL8192C
@@ -10,32 +11,15 @@
 * RTL8192E
 * RTL8723B
 
-## How to (general)
+## How-To (general)
 
-1. Select your chipset and platform in `Makefile`. For example, change
-```
-...
-CONFIG_RTL8821A = n
-...
-```
-to
-```
-...
-CONFIG_RTL8821A = y
-...
-```
-and
-```
-CONFIG_PLATFORM_I386_PC = n
-```
-to
-```
-CONFIG_PLATFORM_I386_PC = y
-```
-2. `make`
-3. If you have previously installed a wireless driver for your chipset, `sudo modprobe -r [your_chipset_name]` where `[your_chipset_name]` is `8821au` for example.
+1. Select your chipset and platform in `Makefile`. For example:
+  * Change ```CONFIG_RTL8821A = n``` to ```CONFIG_RTL8821A = y```
+  * Change ```CONFIG_PLATFORM_I386_PC = n``` to ``` CONFIG_PLATFORM_I386_PC = y```
+2. Uninstall the old driver if needed: `sudo modprobe -r [chipset_name]`, where `[chipset_name]` is `8821au` for instance.
+3. `make`
 4. `sudo make install`
-5. `sudo modprobe [your_chipset_name]`
+5. `sudo modprobe [chipset_name]`
 
 ## Release notes
 
