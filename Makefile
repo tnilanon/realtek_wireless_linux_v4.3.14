@@ -1533,11 +1533,11 @@ ifeq ($(CONFIG_RTL8821A), y)
 $(MODULE_NAME)-$(CONFIG_MP_INCLUDED)+= core/rtw_bt_mp.o
 endif
 
-obj-$(CONFIG_RTL8821AU) := $(MODULE_NAME).o
+obj-$(CONFIG_REALTEK_DRIVER_AS) := $(MODULE_NAME).o
 
 else
 
-export CONFIG_RTL8821AU = m
+export CONFIG_REALTEK_DRIVER_AS = m
 
 all: modules
 
